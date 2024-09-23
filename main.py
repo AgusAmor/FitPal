@@ -13,15 +13,13 @@ class Membresia:
         print(f"Beneficios: {', '.join(self.beneficios)}\n")
 
 def main():
-    # Crear algunas membresías
-    membresia1 = Membresia(1, "Básica", 20.0, ["Acceso a gimnasio", "Clases en grupo"])
-    membresia2 = Membresia(2, "Premium", 50.0, ["Acceso a gimnasio", "Clases en grupo", "Entrenador personal"])
+    # creamos membresias ficticias 
+    membresia1 = Membresia(1, "Básico", 20.0, ["Acceso 1 sede", "Rutinas nivel 1", "Consultas via Mail"])
+    membresia2 = Membresia(2, "Medio", 50.0, ["Acceso a todas las sedes", "Rutinas nivel 1 y 2", "Acceso a 2 clases especiales por mes"])
     membresia3 = Membresia(3, "VIP", 100.0, ["Acceso a gimnasio", "Clases en grupo", "Entrenador personal", "Spa"])
 
-    # Mostrar las membresías creadas
+    # mostramos las membresias que creamos 
     membresia1.mostrar_membresia()
     membresia2.mostrar_membresia()
     membresia3.mostrar_membresia()
 
-if __name__ == "__main__":
-    main()
