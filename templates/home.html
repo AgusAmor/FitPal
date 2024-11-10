@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Fitness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>   
+    <header class="bg-dark text-white p-3" style="font-family: 'Roboto', sans-serif;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="{{ url_for('index') }}" class="text-white me-3">Iniciar Sesión</a>
+            <h1 class="h3">Fitpal</h1>
+            <nav>
+                
+                <a href="{{ url_for('home') }}" class="text-white me-3">Home</a>
+                <a href="{{ url_for('catalogo') }}" class="text-white">Catálogo</a>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Main content -->
+    <div class="container-fluid">
+
+        <!-- Carrusel -->
+        <div id="fitnessCarousel" class="carousel slide w-100" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/800x400?text=Entrena+con+pasión" class="d-block w-100" alt="Entrena con pasión">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Entrena con pasión</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400?text=La+fuerza+viene+de+dentro" class="d-block w-100" alt="La fuerza viene de dentro">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>La fuerza viene de dentro</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400?text=No+te+rindas" class="d-block w-100" alt="No te rindas">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>No te rindas</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#fitnessCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#fitnessCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+            
+        </div>
+    </div>
+
+    <!-- Membresías -->
+    <div class="membership-container mt-5">
+        <div class="membership-card d-flex flex-column">
+            <div class="content">
+                <h2>Membresía <span>Básico</span></h2>
+                <p><span>$ 30.000</span> /mes</p>
+                <ul>
+                    <li>Acceso a solo 1 sede.</li>
+                    <li>Rutinas de nivel 1.</li>
+                    <li>Consultas únicamente vía mail.</li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-warning mt-auto">Asociarse</button>
+        </div>
+        <div class="membership-card d-flex flex-column">
+            <div class="content">
+                <h2>Membresía <span><br>Medio</span></h2>
+                <p><span>$ 50.000</span> /mes</p>
+                <ul>
+                    <li>Acceso a todas las sedes.</li>
+                    <li>Rutinas de nivel 1 y 2.</li>
+                    <li>Consultas únicamente vía mail.</li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-warning mt-auto">Asociarse</button>
+        </div>
+        <div class="membership-card d-flex flex-column">
+            <div class="content">
+                <h2>Membresía <span>Premium</span></h2>
+                <p><span>$ 80.000</span> /mes</p>
+                <ul>
+                    <li>Acceso a todas las sedes.</li>
+                    <li>Rutinas de nivel 1, 2 y 3.</li>
+                    <li>Consultas vía mail y llamadas virtuales con profesionales.</li>
+                    <li>Acceso a clases especiales en cada sede.</li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-warning mt-auto">Asociarse</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">© 2024 Fitpal. Todos los derechos reservados.</p>
+        <p>Visita nuestro <a href="{{ url_for('catalogo') }}" class="text-white">Catálogo</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
