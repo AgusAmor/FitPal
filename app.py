@@ -143,6 +143,11 @@ def eliminar_usuario():
     # Después de eliminar, redirigir nuevamente a la lista de usuarios
     return redirect(url_for('usuarios'))
 
+# NUEVA RUTA PARA MEMBRESIA.HTML
+@app.route('/membresia')
+def membresia():
+    return render_template('membresia.html')  # Renderiza membresia.html desde la carpeta templates
+
 if __name__ == '__main__':
     init_db()  # Inicializa la base de datos al iniciar la app
     app.run(debug=True)

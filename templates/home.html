@@ -19,14 +19,13 @@
     />
   </head>
   <body>
+    <!-- Header -->
     <header
       class="bg-dark text-white p-3"
       style="font-family: 'Roboto', sans-serif"
     >
       <div class="container d-flex justify-content-between align-items-center">
-        <a href="{{ url_for('index') }}" class="text-white me-3"
-          >Cerrar Sesión</a
-        >
+        <a href="{{ url_for('index') }}" class="text-white me-3">Cerrar Sesión</a>
         <a href="{{ url_for('home') }}" class="text-white me-3">
           <img
             src="{{ url_for('static', filename='img/logo.png') }}"
@@ -53,7 +52,6 @@
             <img
               src="{{ url_for('static', filename='img/slider/app.jpg') }}"
               class="d-block w-100"
-              class="d-block w-100"
               alt="Entrena con pasión"
             />
           </div>
@@ -63,7 +61,6 @@
               class="d-block w-100"
               alt="La fuerza viene de dentro"
             />
-            <div class="carousel-caption d-none d-md-block"></div>
           </div>
           <div class="carousel-item">
             <img
@@ -71,7 +68,6 @@
               class="d-block w-100"
               alt="Sé parte vos también"
             />
-            <div class="carousel-caption d-none d-md-block"></div>
           </div>
         </div>
         <button
@@ -96,7 +92,7 @@
     </div>
 
     <!-- Membresías -->
-    <div class="membership-container mt-5">
+    <div class="membership-container mt-5 d-flex justify-content-around">
       <div class="membership-card d-flex flex-column">
         <div class="content">
           <h2>Membresía <br /><span>Básico</span></h2>
@@ -107,7 +103,13 @@
             <li>Consultas únicamente vía mail.</li>
           </ul>
         </div>
-        <button type="button" class="btn btn-warning mt-auto">Asociarse</button>
+        <button
+   type="button"
+    class="btn btn-warning mt-auto"
+    onclick="window.location.href='/membresia?tipo=basico'">
+    Asociarse
+    </button>
+
       </div>
       <div class="membership-card d-flex flex-column">
         <div class="content">
@@ -119,7 +121,13 @@
             <li>Consultas únicamente vía mail.</li>
           </ul>
         </div>
-        <button type="button" class="btn btn-warning mt-auto">Asociarse</button>
+        <button
+   type="button"
+    class="btn btn-warning mt-auto"
+    onclick="window.location.href='/membresia?tipo=medio'">
+    Asociarse
+    </button>
+
       </div>
       <div class="membership-card d-flex flex-column">
         <div class="content">
@@ -132,7 +140,13 @@
             <li>Acceso a clases especiales en cada sede.</li>
           </ul>
         </div>
-        <button type="button" class="btn btn-warning mt-auto">Asociarse</button>
+        <button
+    type="button"
+    class="btn btn-warning mt-auto"
+    onclick="window.location.href='/membresia?tipo=premium'">
+    Asociarse
+  </button>
+
       </div>
     </div>
 
