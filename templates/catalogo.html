@@ -63,7 +63,7 @@
               </p>
               
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Remera FitPal')">Canjear</button>
             
           </div>
         </div>
@@ -83,7 +83,7 @@
                 tus suplementos nutricionales de manera rápida y eficiente.
               </p>
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Shaker Gentecha')">Canjear</button>
           </div>
         </div>
         <!-- Producto 3 -->
@@ -102,7 +102,7 @@
                 leche.
               </p>
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Whey Protein 2Lbs')">Canjear</button>
           </div>
         </div>
         <!-- Producto 4 -->
@@ -118,7 +118,7 @@
               <p class="price text-warning">5000</p>
               <p class="card-text">Proteína 2Lbs + Quemador X60 Caps Ena</p>
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Proteína 2Lbs + Quemador X60 Caps Ena')">Canjear</button>
           </div>
         </div>
         <!-- Producto 5 -->
@@ -136,7 +136,7 @@
                 Llevá tu agua siempre con vos con este botellón de 2200ml
               </p>
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Botella reutilizable 2200ml')">Canjear</button>
           </div>
         </div>
         <!-- Producto 6 -->
@@ -152,7 +152,7 @@
               <p class="price text-warning">500</p>
               <p class="card-text">Soga de 2.5m con rulemanes.</p>
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Soga de 2.5m con rulemanes.')">Canjear</button>
           </div>
         </div>
         <!-- Producto 7 -->
@@ -171,7 +171,7 @@
                 que llega desde los 4kg hasta los 24kg.
               </p>
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Mancuerna Ajustable')">Canjear</button>
           </div>
         </div>
         <!-- Producto 8 -->
@@ -190,11 +190,29 @@
               </p>
               
             </div>
-            <button type="button" class="btn btn-warning mt-auto">Canjear</button>
+            <button type="button" class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#canjearModal" onclick="setModalMessage('Auriculares Jlab Go Air Sport')">Canjear</button>
           </div>
         </div>
       </div>
     </div>
+        <!-- Modal de Agradecimiento -->
+        <div class="modal fade" id="canjearModal" tabindex="-1" aria-labelledby="canjearModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="canjearModalLabel">Gracias por elegirnos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p id="modalProductMessage"></p>
+                <p>En breve le llegará un correo para finalizar el proceso de compra.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-5">
@@ -206,5 +224,11 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function setModalMessage(productName) {
+        const messageElement = document.getElementById('modalProductMessage');
+        messageElement.textContent = `Has seleccionado: ${productName}`;
+      }
+    </script>
   </body>
 </html>
