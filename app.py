@@ -80,6 +80,43 @@ def login():
 def home():
     return render_template('home.html')  # Página para usuarios normales
 
+@app.route('/editar/<int:usuario_id>')
+def editar_usuario(usuario_id):
+    with sqlite3.connect('UsuariosFT.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT id, username, dni, email, is_admin FROM UsuariosFT WHERE id = ?", (usuario_id,))
+        usuario = cursor.fetchone()
+    if usuario:
+        usuario_data = {
+            "id": usuario[0],
+            "username": usuario[1],
+            "dni": usuario[2],
+            "email": usuario[3],
+            "is_admin": usuario[4]
+        }
+        return render_template('editar.html', usuario=usuario_data)
+    else:
+        flash("Usuario no encontrado", "danger")
+        return redirect(url_for('usuarios'))
+
+
+@app.route('/actualizar/<int:usuario_id>', methods=['POST'])
+def actualizar_usuario(usuario_id):
+    username = request.form['username']
+    dni = request.form['dni']
+    email = request.form['email']
+    is_admin = int(request.form['is_admin'])  # Capturar el valor de is_admin
+    with sqlite3.connect('UsuariosFT.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            UPDATE UsuariosFT
+            SET username = ?, dni = ?, email = ?, is_admin = ?
+            WHERE id = ?
+        """, (username, dni, email, is_admin, usuario_id))
+        conn.commit()
+    flash("Usuario actualizado correctamente", "success")
+    return redirect(url_for('usuarios'))
+
 @app.route('/catalogo')
 def catalogo():
     return render_template('catalogo.html')  # Asegúrate de tener un archivo catalogo.html en la carpeta templates
