@@ -24,13 +24,6 @@ class FitPalTestCase(unittest.TestCase):
             ''')
             conn.commit()
 
-    def tearDown(self):
-        # Elimina la base de datos de prueba después de cada prueba
-        with sqlite3.connect(app.config['DATABASE']) as conn:
-            cursor = conn.cursor()
-            cursor.execute("DROP TABLE IF EXISTS test_UsuariosFT")
-            conn.commit()
-
     # Prueba de registro de usuario
     def test_registro_usuario(self):
         response = self.client.post('/submit', data={
